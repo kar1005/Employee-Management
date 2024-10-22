@@ -1,0 +1,37 @@
+﻿@model Employee_ManagementSystem.Models.Country
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row pt-4 pb-4">
+    <div class="col-6" style="text-align:left;">
+        <h1>Country Details</h1>
+    </div>
+
+    <div class="col-6">
+        <a class="btn btn-warning" asp-action="Index"><i class="fa-solid fa-person-walking-arrow-loop-left"></i>&nbsp; Back to List</a>
+    </div>
+</div>
+
+<div>
+  <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+  @*   <a asp-action="Index">Back to List</a> *@
+</div>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Employee_ManagementSystem.Models.Bio>
+
+@{
+    ViewData["Title"] = "Bio Data Of Employee";
+}
+
+<div class="row pt-4 pb-4">
+    <div class="col-6" style="text-align:left;">
+        <h1>Employee Bio Data</h1>
+    </div>
+
+    <div class="col-6 text-end">
+        <a class="btn btn-success" asp-action="Create"><i class="fa-solid"></i>&nbsp; Create Bio Data</a>
+    </div>
+</div>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<div class="card">
+    @* <div class="card-header">
+    <h3 class="card-title">DataTable with default features</h3>
+    </div> *@
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                            @Html.DisplayNameFor(model => model.Aadhar)
+            </th>
+            <th>
+                            @Html.DisplayNameFor(model => model.EmergencyContact)
+            </th>
+            <th>
+                            @Html.DisplayNameFor(model => model.Qualifications)
+            </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Hobbies)
+                        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialHandles)
+            </th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                                @Html.DisplayFor(modelItem => item.Aadhar)
+            </td>
+            <td>
+                                @Html.DisplayFor(modelItem => item.EmergencyContact)
+            </td>
+            <td>
+                                @Html.DisplayFor(modelItem => item.Qualifications)
+            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Hobbies)
+                            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialHandles)
+            </td>
+            
+
+
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-pencil"></i>&nbsp; Edit</a>
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-eye"></i>&nbsp; Details</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash"></i>&nbsp; Delete</a>
+                </td>
+
+            @* <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td> *@
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
