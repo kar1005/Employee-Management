@@ -35,7 +35,7 @@ Other Tools: Git for version control
 Make sure you have installed .NET Core and other necessary tools.<br>
 Download the zip folder.<br>
 Open the folder on Visual Studio or any other platform.<br>
-Type commands:<br>
+Type commands in Package Manager Console:<br>
 Add-Migrations<br>
 Update-Migrations<br>
 <hr>
